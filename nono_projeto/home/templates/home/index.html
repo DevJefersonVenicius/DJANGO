@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açougue Virtual</title>
+</head>
+<body background="{% static '' %}">
+    <div>
+    <a href="#" style="margin-left: 60%">Home</a> |
+    <a href="#">Quem Somos</a> |
+    <a href="#">Contato</a> |
+    </div>
+    {% for acougue in carnes %}
+    <div style="width: 250px; display: inline-block;">
+        <h3>Nome: {{ acougue.nome_carne }}</h3>
+        <h3>Tipo: {{ acougue.tipo_carne }}</h3>
+        <h3>Fazenda: {{ acougue.fazenda }}</h3>
+        <hr>
+        <stan>Cortada em: {{ acougue.data_corte }}</stan>
+        <hr>
+        <stan>Preço: {{ acougue.preco_carne }}</stan>
+        <hr>
+        <a href="#">Saiba mais</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
