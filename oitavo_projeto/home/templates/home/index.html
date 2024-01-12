@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Online</title>
+</head>
+<body background="{% static 'home/imagens/fundo.png' %}">
+    <div style="width: 900px; margin: 20px auto;">
+    <img width="200px" src="{% static 'home/imagens/logo.png' %}">
+    <a href="#" style="margin-left: 50%">Home</a> |
+    <a href="#">Quem Somos</a> |
+    <a href="#">Contato</a> |
+    </div>
+    <div style="width: 900px; margin: -10px auto;">
+        <img width="890" src="{% static 'home/imagens/capa.png' %}">
+    </div>
+    <div style="width: 900px; margin: 0px auto;">
+        {% for livraria in livros %}
+        <div style="width: 250px; display: inline-block;">
+            <h3>Nome: {{ livraria.nome_livro }}</h3>
+            <h3>Autor: {{ livraria.autor }}</h3>
+            <h3>Editora: {{ livraria.editora }}</h3>
+            <hr>
+            <span>Publicado em: {{ livraria.ano_publicacao }} </span>
+            <hr>
+            <span>Páginas: {{ livraria.qntd_paginas }}</span>
+            <hr>
+            <span>Preço: {{ livraria.preco }}</span>
+            <hr>
+            <a href="#">Saiba mais</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
