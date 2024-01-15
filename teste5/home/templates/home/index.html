@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB SITE CARRO</title>
+</head>
+<body>
+    <div style="width: 900px; margin: 20px auto;">
+        <h3>BEM VINDO</h3>
+    </div> 
+    <div style="width: 900px; margin-left: 70%;">
+        <a href="#" style="width: 900px; ">Home</a>
+        <a href="#">Quem Somos</a>
+        <a href="#">Contato</a>
+    </div> 
+    {% for carro in carros %}
+    <div style="width: 250px; margin-left: inline-block;">
+        <h3>Nome: {{ carro.nome }}</h3>
+        <p>Marca: {{ carro.marca }}</p>
+        <p>Modelo: {{ carro.modelo }}</p>
+        <p>Motor: {{ carro.motor }}</p>
+        <p>Pintura: {{ carro.pintura }}</p>
+        <p>Ano: {{ carro.ano }}</p>
+        <p>Placa: {{ carro.placa }}</p>
+        <a href="#">Saiba mais</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
