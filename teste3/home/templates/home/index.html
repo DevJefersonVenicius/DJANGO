@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERES</title>
+</head>
+<body>
+    <div style="width: 900px; margin: 0px auto;">
+        <h3>BEM VINDO</h3>
+    </div>
+    <div style="width: 900px; margin: 0px auto;">
+       <a href="#" style="width: 900px; margin-left: 70%;">Home</a> |
+       <a href="#">Quem Somos</a> |
+       <a href="#">Contato</a> |   
+    </div>
+    <div>
+    {% for animal in animais %}
+    <h3>Nome: {{ animal.nome }}</h3>
+    <p>Especie: {{ animal.especie }}</p>
+    <p>Caracteristicas: {{ animal.caracteristicas }}</p>
+    <p>Raça: {{ animal.raca }}</p>
+    <p>Reino: {{ animal.reino }}</p>
+    <a href="#">Saiba mais</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
