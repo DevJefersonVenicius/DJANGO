@@ -36,13 +36,7 @@ def produto(request):
     if str(request.method) == 'POST':
         form = ProdutoModelForm(request.POST, request.FILES)
         if form.is_valid():
-            prod = form.save(commit=False)
-            
-            print(f'Nome: {prod.nome}')
-            print(f'Preço {prod.preco}')
-            print(f'Imagem: {prod.imagem_produto}')
-            print(f'Descrição: {prod.descricao}')
-            
+            form.save()
             messages.success(request, 'Produto cadastrado com sucesso!')
         else:
             messages.ERROR(request, 'Erro ao cadastrar produto!')
@@ -55,4 +49,3 @@ def produto(request):
     }
 
     return render(request, 'home/produto.html', context)
-
