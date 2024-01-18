@@ -1,4 +1,5 @@
 {% load bootstrap5 %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
 <body>
-<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-dark bg-primary">
@@ -42,7 +43,8 @@
                             </label>
                             <select class="col-md-6 form-control" name="comida_consumida" id="comida_consumida">
                                     {% for food in foods %}
-                                     <option value="{{food.nome}}">{{food.nome}}</option>
+                                     <option value="{{food.nome}}">
+                                        {{food}}</option>
                                     {% endfor %}
                             </select>
                             <button class="btn btn-success" type="submit">Adicionar</button>
@@ -54,8 +56,8 @@
 
         <div class="row">
             <div class="col-md-7">
-                <div>
-                    <h4>Consumo de hoje</h4>
+                <div >
+                    <h4> Consumo de hoje</h4>
                 </div>
 
                 <table id="table" class="table table-striped table-primary">
@@ -63,7 +65,7 @@
                         <th>Item</th>
                         <th>Carboidratos(gm)</th>
                         <th>Proteina(gm)</th>
-                        <th>Gosrduras(gm)</th>
+                        <th>Gorduras(gm)</th>
                         <th>Calorias(Kcal)</th>
                         <th>Deletar Item</th>
                     </tr>
@@ -175,5 +177,4 @@ data: {
 
 
 </script>
-
 </html>

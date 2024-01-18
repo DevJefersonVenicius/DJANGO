@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 
 class Food(models.Model):
     nome = models.CharField(max_length=100)
-    carboidratos = models.FloatField(default=0.0)
-    proteinas = models.FloatField(default=0.0)
-    gorduras = models.FloatField(default=0.0)
-    calorias = models.IntegerField(default=0.0)
+    carboidratos = models.FloatField()
+    proteinas = models.FloatField()
+    gorduras = models.FloatField()
+    calorias = models.IntegerField()
 
     def __str__(self):
         return self.nome
