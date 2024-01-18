@@ -40,9 +40,9 @@
                                 <b>Selecione a comida</b>
                                 
                             </label>
-                            <select class="col-md-6 form-control" name="food_consumed" id="food_consumed">
+                            <select class="col-md-6 form-control" name="comida_consumida" id="comida_consumida">
                                     {% for food in foods %}
-                                     <option value="{‌{food.nome}}">{‌{food.nome}}</option>
+                                     <option value="{{food.nome}}">{{food.nome}}</option>
                                     {% endfor %}
                             </select>
                             <button class="btn btn-success" type="submit">Adicionar</button>
@@ -54,8 +54,8 @@
 
         <div class="row">
             <div class="col-md-7">
-                <div >
-                    <h4> Consumo de hoje</h4>
+                <div>
+                    <h4>Consumo de hoje</h4>
                 </div>
 
                 <table id="table" class="table table-striped table-primary">
@@ -67,13 +67,13 @@
                         <th>Calorias(Kcal)</th>
                         <th>Deletar Item</th>
                     </tr>
-                            {% for c in consumed_food %}
+                            {% for c in consumida_comida %}
                             <tr>
-                                <td>{‌{c.food_consumed.name}}</td>
-                                <td>{‌{c.food_consumed.carboidratos}}</td>
-                                <td>{‌{c.food_consumed.proteinas}}</td>
-                                <td>{‌{c.food_consumed.gorduras}}</td>
-                                <td>{‌{c.food_consumed.calorias}}</td>
+                                <td>{{c.comida_consumida.nome}}</td>
+                                <td>{{c.comida_consumida.carboidratos}}</td>
+                                <td>{{c.comida_consumida.proteinas}}</td>
+                                <td>{{c.comida_consumida.gorduras}}</td>
+                                <td>{{c.comida_consumida.calorias}}</td>
                                 <td><a class="btn btn-danger" href="{% url 'delete' c.id %}">X</a></td>
                             </tr>
 
