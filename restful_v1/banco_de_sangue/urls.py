@@ -6,5 +6,5 @@ router = routers.DefaultRouter()
 router.register(r'doadores', DoadoresViewSet)
 
 urlpatterns = [
-    path('', include(router.urls,  '.api.viewsetsDoadoresViewSet')),
+    path('', include(router.urls)),
 ]
