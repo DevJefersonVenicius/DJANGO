@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Medicamentos - Lista</title>
+</head>
+<body>
+    <div style="width= 900px; margin= 20px auto;">
+        <a href="{% url 'register' %}">CADASTRO DE MEDICAMENTOS</a>
+        <br></br>
+        {% for medicamento in cadastro_medicamentos %}
+            <div>
+                <img src="media/{{ medicamento.photo }}" width="300" heigth="300"></img>
+                <h3>Nome: {{ medicamento.name }}</h3>
+                <p>Tipo de Medicamento: {{ medicamento.type_drug }}</p>
+                <p>Bula: {{ medicamento.bula }}</p>
+                <p>Efeitos Adversos: {{ medicamento.efects }}</p>
+                <p>Tarja: {{ medicamento.bagde_drug }}</p>
+                <span>Horario de uso: {{ medicamento.date_use }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

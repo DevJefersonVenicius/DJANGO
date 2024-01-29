@@ -6,10 +6,10 @@ from rest_framework import routers
 from .api.viewsets import PontoTuristicoViewSet
 
 router = routers.DefaultRouter()
-router.register(r'pontos_turisticos', PontoTuristicoViewSet)
+router.register(r'api_pontos_turisticos', PontoTuristicoViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('register', views.register, name='register'),
-    path('api_pontos_turisticos', include(router.urls)),
+    path('register/', views.register, name='register'),
+    path('api_pontos_turisticos/', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
