@@ -23,7 +23,6 @@ def register(request):
 
 def delete_reuniao(request, id):
     reuniao_cancelada = Reuniao.objects.get(id=id)
-    print('teste;'(reuniao_cancelada))
     if request.method == 'POST':
         reuniao_cancelada.delete()
         return redirect('/')
