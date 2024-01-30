@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REUNIÕES - LISTA</title>
+</head>
+<body>
+    <div style="width= 900px; margin= 20px auto;">
+        <a href="{% url 'register' %}">CADASTRO DE REUNIÕES</a>
+        <a class="btn btn-danger" href="{% url 'delete' reuniao.id %}">Deletar Registro</a>
+        <br></br>
+        {% for reuniao in reunioes %}
+            <div>
+                <h3>Titulo: {{ reuniao.titulo }}</h3>
+                <p>Descrição: {{ reuniao.descricao }}</p>
+                <p>Partipante: {{ reuniao.nome_participante }}</p>
+                <p>Local: {{ reuniao.local }}</p>
+                <span>Dia: {{ reuniao.dia }}</span>
+                <span>Horario: {{ reuniao.horario }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
