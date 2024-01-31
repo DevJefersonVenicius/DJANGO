@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Lista</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'cadastro' %}">Cadastrar Agenda</a>
+        <div class="row">
+            {% for agenda in agendas %}
+            <div class="col">
+                <img src="media/{{ agenda.foto }}" class="img-thumbnail" alt="Capa da Agenda" style="width= 300px; heigth= 300px;">
+                <h2>Disciplina: {{ agenda.disciplina }}</h2>
+                <h3>Assunto: {{ agenda.assunto }}</h3>
+                <p>Tempo de Estudo: {{  agenda.tempo_estudado }}</p>
+                <span>Dias: {{ agenda.get_dia_semana_display }}</span><br>
+                <a class="btn btn-danger" href="{% url 'deletar' agenda.id %}">Deletar Agenda</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>
