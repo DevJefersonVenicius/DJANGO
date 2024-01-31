@@ -1,0 +1,31 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Rosto & Corpo</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'cadastro' %}">Cadastrar Consulta</a>
+        <div class="row">
+            {% for consulta in consultas %}
+            <div class="col">
+                <img src="media/{{ consulta.imagem }}" class="img-thumbnail" alt="Capa da consulta" style="width= 300px; heigth= 300px;">
+                <h2>Nome do Paciente: {{ consulta.nome_paciente }}</h2>
+                <p>Idade do Paciente: {{ consulta.idade }} anos</p>
+                <p>Data de Nascimento: {{  consulta.data_nascimento }}</p>
+                <p>Processo agendado para: {{ consulta.processo_agendado }}</p>
+                <span>Consulta marcada para: {{ consulta.get_dia_consulta_display }}</span><br>
+                <span>Horario da consulta: {{ consulta.hora_marcada }}</span>
+                <a class="btn btn-danger" href="{% url 'deletar' consulta.id %}">Deletar consulta</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>
