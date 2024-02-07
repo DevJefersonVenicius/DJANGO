@@ -1,0 +1,21 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Dentaria</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div style="width: 900px; margin: 10px auto;">
+    <a href="{% url 'register' %}" style="margin-left: 44%;">Ir para a pagina de cadastro</a> |
+    <a href="{% url 'index' %}">Seus cadastros</a> |
+    <a href="#">Quem Somos</a> |
+    <a href="#">Contato</a> |
+    </div>
+    <h2>Bem vindo a Clinica Dentaria</h2>
+    <h5>Sobre nossa Clinica:</h5><p>Somos uma Clinica Dentaria fundada em 07/02/2024 por Jeferson Venicius, nosso objetivo é atender os pacientes da melhor forma com todo o padrão etico e moral.</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Cadastro</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'register' %}">Cadastrar Consulta Dentaria</a> |
+        <a href="{% url 'area_exibicao' %}">Home</a> |
+        <div class="row">
+            {% for dente in dentes %}
+            <div class="col">
+                <img src="media/{{ dente.imagem }}" class="img-thumbnail" alt="Capa da consulta dentaria" style="width= 300px; heigth= 300px;">
+                <h2>Nome do Paciente: {{ dente.nome }}</h2>
+                <p>Idade do Paciente: {{ dente.idade }} anos</p>
+                <p>Data de Nascimento: {{  dente.data_nascimento }}</p>
+                <p>CPF: {{ dente.cpf }}</p>
+                <p>E-mail: {{ dente.email }}</p>
+                <p>Contato: {{ dente.numero }}</p>
+                <p>Descrição do problema: {{ dente.descricao }}</p>
+                <P>Data e hora do Cadastro: {{ dente.data_tempo_cadastro }}</P>
+                <span>Consulta marcada para: {{ dente.get_dia_consulta_display }}</span><br>
+                <span>Horario da consulta: {{ dente.get_horario_display }}</span><br>
+                <a class="btn btn-danger" href="{% url 'deletar' dente.id %}">Deletar Consulta</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>
