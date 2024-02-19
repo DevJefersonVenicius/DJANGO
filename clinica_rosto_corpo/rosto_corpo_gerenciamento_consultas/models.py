@@ -17,7 +17,7 @@ class Consulta(models.Model):
     data_nascimento = models.DateField()
     dia_consulta = models.CharField(max_length=3, choices=DIA_CONSULTA_CHOICES, default='DOM')
     imagem = models.ImageField(upload_to='fotos')
-    hora_marcada = models.DateField(auto_now_add=True)
+    hora_marcada = models.DateTimeField()
     processo_agendado = models.TextField()
 
     def __str__(self):
